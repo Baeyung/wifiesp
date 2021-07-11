@@ -1,11 +1,19 @@
 package com.machi.wifiesp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -26,186 +34,79 @@ import cz.msebera.android.httpclient.entity.mime.Header;
 public class MainActivity extends AppCompatActivity {
 
 
+    private Wifi_Code wifiCode = new Wifi_Code();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Button on = (Button) findViewById(R.id.button2);
-        Button off =(Button) findViewById(R.id.button);
-        Button neg = (Button) findViewById(R.id.button4);
-        Button pos = (Button) findViewById(R.id.button5);
-        Button w =(Button) findViewById(R.id.button6);
-        Button b = (Button) findViewById(R.id.button7);
-        Button g = (Button) findViewById(R.id.button8);
-        Button r =(Button) findViewById(R.id.button9);
-        Button f = (Button) findViewById(R.id.button10);
-        Button lb = (Button) findViewById(R.id.button11);
-        Button lg =(Button) findViewById(R.id.button12);
-        Button lr = (Button) findViewById(R.id.button13);
-        Button s = (Button) findViewById(R.id.button14);
-        Button p =(Button) findViewById(R.id.button15);
-        Button sb = (Button) findViewById(R.id.button16);
-        Button o = (Button) findViewById(R.id.button17);
-        Button fa =(Button) findViewById(R.id.button18);
-        Button lp = (Button) findViewById(R.id.button19);
-        Button nb = (Button) findViewById(R.id.button20);
-        Button lo =(Button) findViewById(R.id.button21);
-        Button sm = (Button) findViewById(R.id.button22);
-        Button pi = (Button) findViewById(R.id.button23);
-        Button db =(Button) findViewById(R.id.button24);
-        Button y = (Button) findViewById(R.id.button25);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainerView2,ColorWheel.class,null)
+                .setReorderingAllowed(true)
+                .commit();
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
 
-        on.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16236607");
-            }
-        });
-        off.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16203967");
-            }
-        });
-        pi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16214167");
-            }
-        });
-        neg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16220287");
-            }
-        });
-        pos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16187647");
-            }
-        });
-        w.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16244767");
-            }
-        });
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16212127");
-            }
-        });
-        g.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16228447");
-            }
-        });
-        r.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16195807");
-            }
-        });
-        f.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16240687");
-            }
-        });
-        lg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16224367");
-            }
-        });
-        lb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16208047");
-            }
-        });
-        lr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16191727");
-            }
-        });
-        s.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16248847");
-            }
-        });
-        p.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16216207");
-            }
-        });
-        sb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16232527");
-            }
-        });
-        o.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16199887");
-            }
-        });
-        fa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16238647");
-            }
-        });
-        lp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16206007");
-            }
-        });
-        nb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16230487");
-            }
-        });
-        lo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16189687");
-            }
-        });
-        sm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16246807");
-            }
-        });
-        db.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16230487");
-            }
-        });
-        y.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createreq("16197847");
-            }
-        });
     }
 
-    void createreq(String x){
-        Wifi_Code wifi_code = new Wifi_Code();
-        wifi_code.wifiCode(x);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu1,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        switch(item.getItemId()){
+            case R.id.item1:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView2, Settings.class, null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack("name") // name can be null
+                        .commit();
+                return true;
+            case R.id.item2:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView2, Static.class, null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack("name") // name can be null
+                        .commit();
+                return true;
+            case R.id.item3:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView2, Dynamic.class, null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack("name") // name can be null
+                        .commit();
+                return true;
+            case R.id.item4:
+                wifiCode.wifiCode("16236607");
+                return true;
+            case R.id.item5:
+                wifiCode.wifiCode("16203967");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+    @Override
+    public void onBackPressed() {
+        int stackCount = getSupportFragmentManager().getBackStackEntryCount();
+        if (stackCount == 1) {
+            super.onBackPressed(); // if you don't have any fragments in your backstack yet.
+        } else {
+            // just replace container with fragment as you normally do;
+
+            FragmentManager fm = getSupportFragmentManager();
+            fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            FragmentTransaction transaction = fm.beginTransaction();
+            transaction.replace(R.id.fragmentContainerView2, new ColorWheel());
+            transaction.commit();
+        }
     }
 
 }

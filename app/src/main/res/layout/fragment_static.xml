@@ -1,14 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context=".Static">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Static Light             Colors"
+        android:textColor="@android:color/white"
+        android:textSize="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="271dp"
+        android:text="Button"
+        android:textColor="#0313fc"
+        android:backgroundTint="#0313fc"
+        app:layout_constraintEnd_toStartOf="@+id/dblue"
+        app:layout_constraintStart_toEndOf="@+id/lpurple"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dblue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:text="Button"
+        android:textColor="#0303fc"
+        android:backgroundTint="#0303fc"
+        app:layout_constraintBaseline_toBaselineOf="@+id/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/blue" />
+
+    <Button
+        android:id="@+id/lpurple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="Button"
+        android:textColor="#ad03fc"
+        android:backgroundTint="#ad03fc"
+        app:layout_constraintBaseline_toBaselineOf="@+id/blue"
+        app:layout_constraintEnd_toStartOf="@+id/blue"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/dpurple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textColor="#2003fc"
+        android:backgroundTint="#2003fc"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/green"
+        app:layout_constraintStart_toEndOf="@+id/pink"
+        app:layout_constraintTop_toBottomOf="@+id/blue" />
+
+    <Button
+        android:id="@+id/green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:textColor="#03fc0b"
+        android:backgroundTint="#03fc0b"
+        android:text="Button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dpurple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dpurple" />
+
+    <Button
+        android:id="@+id/pink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="Button"
+        android:textColor="#fc03ec"
+        android:backgroundTint="#fc03ec"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dpurple"
+        app:layout_constraintEnd_toStartOf="@+id/dpurple"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/lgreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Button"
+        android:textColor="#03fc1c"
+        android:backgroundTint="#03fc1c"
+        app:layout_constraintEnd_toStartOf="@+id/dsblue"
+        app:layout_constraintStart_toEndOf="@+id/sblue"
+        app:layout_constraintTop_toBottomOf="@+id/dpurple" />
+
+    <Button
+        android:id="@+id/sblue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:backgroundTint="#03fcf0"
+        android:textColor="#03fcf0"
+        android:text="Button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lgreen"
+        app:layout_constraintEnd_toStartOf="@+id/lgreen"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/dsblue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:backgroundTint="#0394fc"
+        android:textColor="#0394fc"
+        android:text="Button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lgreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lgreen" />
+
+    <Button
+        android:id="@+id/navyb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Button"
+        android:textColor="#02025c"
+        android:backgroundTint="#02025c"
+        app:layout_constraintEnd_toStartOf="@+id/red"
+        app:layout_constraintStart_toEndOf="@+id/lred"
+        app:layout_constraintTop_toBottomOf="@+id/lgreen" />
+
+    <Button
+        android:id="@+id/red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:textColor="#ff1500"
+        android:backgroundTint="#ff1500"
+        android:text="Button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/navyb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/navyb" />
+
+    <Button
+        android:id="@+id/lred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="Button"
+        android:textColor="#ff594a"
+        android:backgroundTint="#ff594a"
+        app:layout_constraintBaseline_toBaselineOf="@+id/navyb"
+        app:layout_constraintEnd_toStartOf="@+id/navyb"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/orange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:text="Button"
+        android:textColor="#ff6105"
+        android:backgroundTint="#ff6105"
+        app:layout_constraintEnd_toStartOf="@+id/lorange"
+        app:layout_constraintStart_toEndOf="@+id/yellow"
+        app:layout_constraintTop_toBottomOf="@+id/navyb" />
+
+    <Button
+        android:id="@+id/lorange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:textColor="#fc782b"
+        android:backgroundTint="#fc782b"
+        android:text="Button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/orange" />
+
+    <Button
+        android:id="@+id/yellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:backgroundTint="#fadd00"
+        android:textColor="#fadd00"
+        android:text="Button"
+        app:layout_constraintBaseline_toBaselineOf="@+id/orange"
+        app:layout_constraintEnd_toStartOf="@+id/orange"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
