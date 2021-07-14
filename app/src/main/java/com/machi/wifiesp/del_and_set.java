@@ -17,26 +17,18 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link del_and_set#newInstance} factory method to
- * create an instance of this fragment.
- *
- */
 public class del_and_set extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private List<String> mParam1;
     private int mParam2;
     Button del;
@@ -45,15 +37,6 @@ public class del_and_set extends Fragment {
     private static final String NAME = "server_list.txt";
     private static final String NAME1 = "current.txt";
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment del_and_set.
-     */
-    // TODO: Rename and change types and number of parameters
     public static del_and_set newInstance(ArrayList<String> param1, int param2) {
         del_and_set fragment = new del_and_set();
         Bundle args = new Bundle();
@@ -79,7 +62,6 @@ public class del_and_set extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_del_and_set, container, false);
         del = v.findViewById(R.id.delete);
         en = v.findViewById(R.id.textView4);
@@ -116,12 +98,19 @@ public class del_and_set extends Fragment {
     }
 
     public void overWrite(List<String> mText) {
+        File dir = getActivity().getFilesDir();
+        File file = new File(dir, NAME);
+        boolean deleted = file.delete();
+        if(deleted){
+            Toast.makeText(getContext(), "file deleted", Toast.LENGTH_SHORT).show();
+        }
         for (int i = 0; i < mText.size(); i++) {
             String text1 = mText.get(i);
             text1 += "\n";
             FileOutputStream fos = null;
+
             try {
-                fos = getActivity().openFileOutput(NAME, Context.MODE_PRIVATE);
+                fos = getActivity().openFileOutput(NAME, Context.MODE_APPEND);
                 fos.write(text1.getBytes());
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
