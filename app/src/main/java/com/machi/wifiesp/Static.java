@@ -71,7 +71,11 @@ public class Static extends Fragment {
         blue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16212127");
+                int color = 201724;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -80,7 +84,11 @@ public class Static extends Fragment {
         dblue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16208047");
+                int color = 197628;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -89,7 +97,11 @@ public class Static extends Fragment {
         dpurple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16206007");
+                int color = 2098172;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -98,7 +110,11 @@ public class Static extends Fragment {
         lpurple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16216207");
+                int color = 11338748;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -107,7 +123,11 @@ public class Static extends Fragment {
         pink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16214167");
+                int color = 16516076;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -116,7 +136,11 @@ public class Static extends Fragment {
         green.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16228447");
+                int color = 261131;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -125,7 +149,11 @@ public class Static extends Fragment {
         lgreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16224367");
+                int color = 261148;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -134,7 +162,11 @@ public class Static extends Fragment {
         sblue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16232527");
+                int color = 261360;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -143,7 +175,11 @@ public class Static extends Fragment {
         dsblue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16222327");
+                int color = 234748;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -152,7 +188,11 @@ public class Static extends Fragment {
         navyblue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16230487");
+                int color = 131676;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -161,7 +201,11 @@ public class Static extends Fragment {
         red.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16195807");
+                int color = 16717056;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -170,7 +214,11 @@ public class Static extends Fragment {
         lred.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16191727");
+                int color = 16734538;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -179,7 +227,11 @@ public class Static extends Fragment {
         orange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16199887");
+                int color = 16736517;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -188,7 +240,11 @@ public class Static extends Fragment {
         lorange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16189687");
+                int color = 16545835;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }
@@ -197,7 +253,11 @@ public class Static extends Fragment {
         yellow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16197847");
+                int color = 16440576;
+                int red = (color >> 16) & 0xFF;
+                int green = (color >> 8) & 0xFF;
+                int blue = (color) & 0xFF;
+                s = wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
                 if(s == "failure"){
                     Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                 }

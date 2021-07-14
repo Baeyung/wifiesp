@@ -49,37 +49,37 @@ public class Dynamic extends Fragment {
         flash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16240687");
-                if(s == "failure"){
-                    Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
-                }
+//                s = wifiCode.wifiCode("16240687");
+//                if(s == "failure"){
+//                    Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+//                }
             }
         });
         fade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16238647");
-                if(s == "failure"){
-                    Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
-                }
+//                s = wifiCode.wifiCode("16238647");
+//                if(s == "failure"){
+//                    Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+//                }
             }
         });
         smooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16246807");
-                if(s == "failure"){
-                    Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
-                }
+//                s = wifiCode.wifiCode("16246807");
+//                if(s == "failure"){
+//                    Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+//                }
             }
         });
         strobe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s = wifiCode.wifiCode("16248847");
-                if(s == "failure"){
-                    Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
-                }
+//                s = wifiCode.wifiCode("16248847");
+//                if(s == "failure"){
+//                    Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 

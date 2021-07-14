@@ -10,9 +10,9 @@ public class Wifi_Code{
     public Wifi_Code() {
 
     }
-    public String wifiCode(String x){
+    public String wifiCode(String red, String blue, String green){
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("http://ahmadserver.ddns.net:85/ir?code=" + x, new AsyncHttpResponseHandler() {
+        client.get("http://ahmadserver.ddns.net:88/?r"+red+"g"+green+"b"+blue+"&", new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody) {
                 //Toast.makeText(MainActivity.this, "successful", Toast.LENGTH_SHORT).show();

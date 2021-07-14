@@ -83,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
                         .commit();
                 return true;
             case R.id.item4:
-                wifiCode.wifiCode("16236607");
+                wifiCode.wifiCode("255","255","255");
                 return true;
             case R.id.item5:
-                wifiCode.wifiCode("16203967");
+                wifiCode.wifiCode("0","0","0");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

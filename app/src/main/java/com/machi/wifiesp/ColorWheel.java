@@ -25,6 +25,7 @@ import com.flask.colorpicker.slider.LightnessSlider;
 public class ColorWheel extends Fragment {
     private ColorPickerView colorPickerView;
     private LightnessSlider lightnessSlider;
+    private Wifi_Code wifiCode = new Wifi_Code();
 
 
     public ColorWheel() {
@@ -57,8 +58,10 @@ public class ColorWheel extends Fragment {
                 int red = (color >> 16) & 0xFF;
                 int green = (color >> 8) & 0xFF;
                 int blue = (color) & 0xFF;
-               // int alpha = (color >> 24) & 0xFF;
-                //Toast.makeText(getContext(), "r: " + red + "g: " + green + "b: " + blue + "a: " + alpha, Toast.LENGTH_SHORT).show();
+                String s =wifiCode.wifiCode(Integer.toString(red),Integer.toString(blue),Integer.toString(green));
+                if(s == "failure"){
+                    Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
