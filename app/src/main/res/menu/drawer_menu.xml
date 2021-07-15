@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Color_wheel"
+            android:icon="@drawable/ic_baseline_blur_on_24"
+            android:title="Color Wheel" />
+        <item
+            android:id="@+id/nav_Static"
+            android:icon="@drawable/ic_baseline_color_lens_24"
+            android:title="Static Lights" />
+        <item
+            android:id="@+id/nav_Dynamic"
+            android:icon="@drawable/ic_baseline_hvac_24"
+            android:title="Dynamic Lights" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_baseline_send_24"
+                android:title="Send Feed Back" />
+        </menu>
+    </item>
+
+</menu>

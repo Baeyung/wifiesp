@@ -1,9 +1,12 @@
 package com.machi.wifiesp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -19,6 +22,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -31,8 +35,9 @@ import java.io.InputStream;
 
 import cz.msebera.android.httpclient.entity.mime.Header;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    private DrawerLayout drawer;
 
     private Wifi_Code wifiCode = new Wifi_Code();
     @Override
@@ -41,10 +46,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        if(savedInstanceState == null){
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragmentContainerView2,ColorWheel.class,null)
                 .setReorderingAllowed(true)
                 .commit();
+        }
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
 
@@ -68,20 +82,6 @@ public class MainActivity extends AppCompatActivity {
                         .addToBackStack("name") // name can be null
                         .commit();
                 return true;
-            case R.id.item2:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView2, Static.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name") // name can be null
-                        .commit();
-                return true;
-            case R.id.item3:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView2, Dynamic.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name") // name can be null
-                        .commit();
-                return true;
             case R.id.item4:
                 wifiCode.wifiCode("255","255","255");
                 return true;
@@ -95,18 +95,59 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        int stackCount = getSupportFragmentManager().getBackStackEntryCount();
-        if (stackCount == 1) {
-            super.onBackPressed(); // if you don't have any fragments in your backstack yet.
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
         } else {
-            // just replace container with fragment as you normally do;
-
-            FragmentManager fm = getSupportFragmentManager();
-            fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            FragmentTransaction transaction = fm.beginTransaction();
-            transaction.replace(R.id.fragmentContainerView2, new ColorWheel());
-            transaction.commit();
+            super.onBackPressed();
         }
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        switch(item.getItemId()){
+            case R.id.nav_Color_wheel:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView2, ColorWheel.class, null)
+                        .setReorderingAllowed(true)
+                        .commit();
+                drawer.closeDrawer(GravityCompat.START);
+                return true;
+            case R.id.nav_Static:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView2, Static.class, null)
+                        .setReorderingAllowed(true)
+                        .commit();
+                drawer.closeDrawer(GravityCompat.START);
+                return true;
+            case R.id.nav_Dynamic:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView2, Dynamic.class, null)
+                        .setReorderingAllowed(true)
+                        .commit();
+                drawer.closeDrawer(GravityCompat.START);
+                return true;
+            case R.id.nav_share:
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "link to Google Play";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Check this App");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+                drawer.closeDrawer(GravityCompat.START);
+                return true;
+            case R.id.nav_send:
+                Intent Email = new Intent(Intent.ACTION_SEND);
+                Email.setType("text/email");
+                Email.putExtra(Intent.EXTRA_EMAIL, new String[] { "ahmadsheikh617@gnail.com" });
+                Email.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
+                Email.putExtra(Intent.EXTRA_TEXT, "Dear Dev," + "\n");
+                startActivity(Intent.createChooser(Email, "Send Feedback:"));
+                drawer.closeDrawer(GravityCompat.START);
+                return true;
+            default:
+                return true;
+
+        }
+    }
 }
